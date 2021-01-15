@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(./images/01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+li {
+    list-style: none;
+    font-weight: 400;
+    font-size: 45px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+li:hover {
+    color: rgb(236, 233, 48);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex a:link,
+.flex a:hover,
+.flex a:visited,
+.flex a:active {
+    transition: all 0.4s ease-in;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 2em;
+    color: #fefefe;
+    background-color: #333;
+    text-decoration: none;
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    top: calc(100% - 75px);
+    left: calc(100% - 75px);
+    transform-origin: 50%;
+    transform: rotate(90deg);
+    backface-visibility: hidden;
+}
+
+.flex a:hover {
+    background-color: #333;
+}
+
+.flex a.opened {
+    top: -230px;
+    left: -80px;
+    transform: rotate(-45deg);
+    transform-origin: 750%;
+}
+
+.flex .model {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.flex .model .model-inner {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    background-color: #fff;
+    width: 0;
+    height: 0;
+    transition: all 0.4s ease-in 0.4s;
+    backface-visibility: hidden;
+}
+
+.flex .model .model-inner .content {
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition: opacity 0.4s ease;
+    backface-visibility: hidden;
+    color: #333;
+    text-align: center;
+    max-width: 90vw;
+    max-height: 90vw;
+}
+
+a.opened~.model .model-inner {
+    width: 200vw;
+    height: 200vw;
+}
+
+a.opened~.model .model-inner .content {
+    opacity: 1;
+    transition-delay: 0.5s;
+}
